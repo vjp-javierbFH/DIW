@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <header>
+        <h1>CATÁLOGO DE ARTE</h1>
+    </header>
+    <h3>Introduce los términos de búsqueda</h3>
+
+    <div class="obra">
+        <h2>Obra</h2>
+        <div class="titulo">
+            <label for="titulo">Titulo</label>
+            <input type="text">
+        </div>
+        <div class="autor">
+            <label for="autor">Autor</label>
+            <input type="text">
+        </div>
+    </div>
+    <div class="tipo">
+        <h2>Tipo</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            <label class="form-check-label" for="checkDefault">
+                Escultura
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            <label class="form-check-label" for="checkDefault">
+                Arquitectura
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            <label class="form-check-label" for="checkDefault">
+                Pintura
+            </label>
+        </div>
+    </div>
+
+    <div class="disponibilidad">
+        <h2>Disponibilidad</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+            <label class="form-check-label" for="radioDefault1">
+                Museo / Acceso público
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+            <label class="form-check-label" for="radioDefault1">
+                Colección privada
+            </label>
+        </div>
+    </div>
+
+    <div class="form-floating">
+        <h2>Estilo</h2>
+        <select name="estilo" id="estilo" class="form-select" aria-label="Floating label select">
+            <option value="clas" selected>Clásico</option>
+            <option value="abs">Abstracto</option>
+            <option value="surr">Surrealista</option>
+            <option value="otros">Otros</option>
+        </select>
+    </div>
+
+    <div class="form floating">
+        <label>Háganos saber sus sugerencias</label>
+        <textarea name="sug" id="sug" rows="4" cols="40"></textarea>
+    </div>
+
+</body>
+
+</html>
