@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Hoy | Noticias al instante</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        header h1 i {
+            margin-right: 10px;
+            color: #00bfff;
+        }
+
+        nav {
+            background-color: #0059b3;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #004080;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        article {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        aside {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .redes a {
+            color: #003366;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-earth-americas"></i> Mundo Hoy</h1>
+        <p>Noticias actualizadas del mundo, tecnología y cultura</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Política</a></li>
+            <li><a href="#">Tecnología</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section aria-label="Noticias principales">
+            <article>
+                <h2>La economía global se estabiliza tras un año turbulento</h2>
+                <p><small>Publicado el 23 de octubre de 2025 por <strong>Redacción Mundo Hoy</strong></small></p>
+                <img src="https://via.placeholder.com/800x300" alt="Imagen de economía mundial">
+                <p>Después de varios meses de incertidumbre, los mercados internacionales muestran señales de
+                    recuperación gracias a nuevas políticas sostenibles y acuerdos multilaterales.</p>
+                <a href="#">Leer más...</a>
+            </article>
+
+            <article>
+                <h2>Avances tecnológicos: la IA revoluciona la educación</h2>
+                <p><small>Publicado el 22 de octubre de 2025 por <strong>Laura Méndez</strong></small></p>
+                <img src="https://via.placeholder.com/800x300" alt="Educación e inteligencia artificial">
+                <p>Las nuevas plataformas de aprendizaje impulsadas por inteligencia artificial personalizan la
+                    educación y facilitan el acceso al conocimiento global.</p>
+                <a href="#">Leer más...</a>
+            </article>
+        </section>
+
+        <aside>
+            <h3>Noticias destacadas</h3>
+            <ul>
+                <li><a href="#">Nuevas medidas ambientales en Europa</a></li>
+                <li><a href="#">El auge de la energía solar en Latinoamérica</a></li>
+                <li><a href="#">Descubren exoplaneta similar a la Tierra</a></li>
+            </ul>
+
+            <h3>Síguenos</h3>
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mundo Hoy. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
