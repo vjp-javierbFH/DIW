@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <style>
-        .tipo{
-            justify-content: center;
+        h1{
+            text-align: center;
+        }
+        .formulario{
+            display: inline-flexbox;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>CATÁLOGO DE ARTE</h1>
-    </header>
-    <h3>Introduce los términos de búsqueda</h3>
+    <h1>CATÁLOGO DE ARTE</h1>
 
-    <div class="row">
-        <div class="obra col">
+    <h3>Introduce los términos de búsqueda</h3>
+    <div class="formulario">
+        <div class="obra">
             <h2>Obra</h2>
             <div class="titulo">
                 <label for="titulo">Título</label>
@@ -30,7 +31,7 @@
                 <input type="text">
             </div>
         </div>
-        <div class="tipo col">
+        <div class="tipo">
             <h2>Tipo</h2>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="checkDefault">
@@ -51,7 +52,7 @@
                 </label>
             </div>
         </div>
-        <div class="disponibilidad col">
+        <div class="disponibilidad">
             <h2>Disponibilidad</h2>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
@@ -62,11 +63,11 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
                 <label class="form-check-label" for="radioDefault1">
-                    Colección privada
+                ección privada
                 </label>
             </div>
         </div>
-        <div class="form-floating col">
+        <div class="form-floating">
             <h2>Estilo</h2>
             <select name="estilo" id="estilo" class="form-select" aria-label="Floating label select">
                 <option value="clas" selected>Clásico</option>
@@ -79,7 +80,7 @@
 
     <div class="form-floating">
         <label><strong>Háganos saber sus sugerencias:</strong></label>
-        <textarea name="sug" id="sug" rows="4" cols="40" placeholder="Me gustaría indicar que..."></textarea>
+        <textarea name="sug" id="sug" rows="4"s="40" placeholder="Me gustaría indicar que..."></textarea>
     </div>
 
     <button class="button">Buscar</button>
