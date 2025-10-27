@@ -6,11 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
     <style>
-        h1{
-            text-align: center;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        .formulario{
-            display: inline-flexbox;
+        h1 {
+            text-align: center;
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        .formulario {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .obra, .tipo, .disponibilidad, .estilo {
+            margin-right: 20px;
+        }
+        h2 {
+            margin: 0 0 10px 0;
+        }
+        input[type="text"] {
+            width: 200px;
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .form-check {
+            margin: 5px 0;
+        }
+        .form-floating {
+            margin-top: 20px;
+        }
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 60px;
+            margin-top: 5px;
+            padding: 5px;
+        }
+        button {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
@@ -18,61 +69,51 @@
 <body>
     <h1>CATÁLOGO DE ARTE</h1>
 
-    <h3>Introduce los términos de búsqueda</h3>
+    <h3>Introduce los términos de búsqueda:</h3>
     <div class="formulario">
         <div class="obra">
             <h2>Obra</h2>
             <div class="titulo">
                 <label for="titulo">Título</label>
-                <input type="text">
+                <input type="text" id="titulo" name="titulo">
             </div>
             <div class="autor">
                 <label for="autor">Autor</label>
-                <input type="text">
+                <input type="text" id="autor" name="autor">
             </div>
         </div>
         <div class="tipo">
             <h2>Tipo</h2>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                <label class="form-check-label" for="checkDefault">
-                    Escultura
-                </label>
+                <input class="form-check-input" type="checkbox" value="escultura" id="escultura">
+                <label class="form-check-label" for="escultura">Escultura</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                <label class="form-check-label" for="checkDefault">
-                    Arquitectura
-                </label>
+                <input class="form-check-input" type="checkbox" value="arquitectura" id="arquitectura">
+                <label class="form-check-label" for="arquitectura">Arquitectura</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                <label class="form-check-label" for="checkDefault">
-                    Pintura
-                </label>
+                <input class="form-check-input" type="checkbox" value="pintura" id="pintura">
+                <label class="form-check-label" for="pintura">Pintura</label>
             </div>
         </div>
         <div class="disponibilidad">
             <h2>Disponibilidad</h2>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                <label class="form-check-label" for="radioDefault1">
-                    Museo / Acceso público
-                </label>
+                <input class="form-check-input" type="radio" name="disponibilidad" id="publico" value="publico">
+                <label class="form-check-label" for="publico">Museo / Acceso público</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                <label class="form-check-label" for="radioDefault1">
-                ección privada
-                </label>
+                <input class="form-check-input" type="radio" name="disponibilidad" id="privada" value="privada">
+                <label class="form-check-label" for="privada">Colección privada</label>
             </div>
         </div>
-        <div class="form-floating">
+        <div class="estilo">
             <h2>Estilo</h2>
-            <select name="estilo" id="estilo" class="form-select" aria-label="Floating label select">
-                <option value="clas" selected>Clásico</option>
-                <option value="abs">Abstracto</option>
-                <option value="surr">Surrealista</option>
+            <select name="estilo" id="estilo" class="form-select">
+                <option value="clasico" selected>Clásico</option>
+                <option value="abstracto">Abstracto</option>
+                <option value="surrealista">Surrealista</option>
                 <option value="otros">Otros</option>
             </select>
         </div>
@@ -80,10 +121,10 @@
 
     <div class="form-floating">
         <label><strong>Háganos saber sus sugerencias:</strong></label>
-        <textarea name="sug" id="sug" rows="4"s="40" placeholder="Me gustaría indicar que..."></textarea>
+        <textarea name="sug" id="sug" placeholder="Me gustaría indicar que..."></textarea>
     </div>
 
-    <button class="button">Buscar</button>
+    <button>Buscar</button>
 </body>
 
 </html>
