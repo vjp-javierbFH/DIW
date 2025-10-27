@@ -54,66 +54,75 @@ h1 {
     margin: 0
 }
 
-#header {
+header {
     background: black;
     color: white;
     margin: 0;
     padding: 1.75em 0
 }
 
-#header p {
+header p {
     text-align: center;
     font-size: medium;
     line-height: 2.154
 }
 
-#header a {
+header a {
     color: white
 }
 
-#arc th,
-#arc td {
-    list-style: none;
+aside#arc dt,
+aside#arc dd,
+aside#arc ul,
+aside#arc li {
     margin: 0;
-    padding: 0
+    padding: 0;
+    list-style: none
 }
 
-#arc th {
-    text-align: right
+aside#arc dt {
+    text-align: right;
+    padding: 0 1.75em 0 0;
+    vertical-align: baseline;
+    font-weight: bold
 }
 
-#footer,
+aside#arc dd ul li {
+    display: flex;
+    align-items: baseline
+}
+
+aside#arc dd ul li span {
+    text-align: right;
+    padding: 0 1.75em 0 0;
+    width: 3em;
+    font-weight: bold;
+    flex-shrink: 0
+}
+
+footer,
 .c {
     text-align: center;
     clear: both
 }
 
-#arc th {
-    padding: 0 1.75em 0 0;
-    vertical-align: baseline
-}
-
-#arc {
-    border-collapse: collapse
-}
-
-.post-date {
-    float: right;
-    font-size: small;
-    margin: 2px 0 0 0
-}
-
-#nav ul {
+nav ul {
     margin: 0;
     padding: 0 1em 0 0;
     text-align: center
 }
 
-#nav li {
+nav li {
     display: inline;
     padding-left: 1em
 }
 
 .sectionSign:before {
     content: '\00A7'
+}
+
+.post-date {
+    float: right;
+    font-size: small;
+    margin: 2px 0 0 0
 }
