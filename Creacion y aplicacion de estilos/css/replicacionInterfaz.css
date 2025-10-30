@@ -1,0 +1,152 @@
+/*El cuerpo de la página*/
+body {
+    background-image: url("../recursos/Fondo.jpg");
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Elmenentos de la clase container*/
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/*Elementos de la clase logo*/
+.logo {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+/*img de la clase logo*/
+.logo img {
+    vertical-align: middle;
+}
+
+/*Elementos de la clase titulo-campus*/
+.titulo-campus {
+    display: inline-block;
+    font-size: 3em;
+    color: #1ab39e;
+    font-family: 'Arial', sans-serif;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+/*Elementos de la clase subtitulo-campus*/
+.subtitulo-campus {
+    font-size: 1.5em;
+    color: #f3b13c;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/*Elementos de la clase formulario*/
+.formulario {
+    background-color: #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #ccc;
+    padding: 25px 35px 20px 35px;
+    margin-bottom: 20px;
+    min-width: 320px;
+    max-width: 350px;
+}
+
+.form-titulo {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/*Formulario*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*Los label de las clases correo y paswd*/
+.correo label,
+.paswd label {
+    font-size: 0.95em;
+    color: #888;
+}
+
+/*Los input que sean de tipo email y password*/
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 3px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+/*Input cuyo tipo es button*/
+input[type="button"] {
+    background-color: #d3d3d3;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 6px 18px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/*Al pasar por encima del botón*/
+input[type="button"]:hover {
+    background-color: #bcbcbc;
+}
+
+.idiomas {
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-size: 0.95em;
+}
+
+.idiomas span {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.idiomas a {
+    margin: 0 5px;
+    color: #1a5db3;
+    text-decoration: underline;
+    font-size: 0.95em;
+}
+
+.info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #222;
+}
+
+.info a {
+    color: #1ab39e;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.85em;
+    color: #888;
+}

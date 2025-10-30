@@ -1,0 +1,47 @@
+/*Encabezado h1: borde 2px sólido y color azul*/
+h1 {
+    border: 2px solid #00f;
+}
+
+/*Encabezado h2: borde 2px sólido y color gris*/
+h2 {
+    border: 2px solid #aaa;
+}
+
+/*Lista: borde 2px sólido y color verde*/
+ul {
+    border: 2px solid #0f0;
+}
+
+/*Cuerpo: margen izquierdo y derecho de 10px*/
+body > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Encabezado h1: padding de 10px*/
+h1 {
+    padding: 10px;
+}
+
+/*Encabezado h2: margen superior de 30px*/
+h2,
+h1 {
+    margin-top: 30px;
+}
+
+/*Encabezado h2: padding de 5px*/
+h2 {
+    padding: 5px;
+}
+
+/*Encabezado h2 y lista: margen superior de 15px*/
+h2,
+ul {
+    margin-top: 15px;
+}
+
+/*Elementos de la lista: margen de 15px*/
+ul li {
+    margin: 15px;
+}
