@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(192, 186, 186);
+    margin: 0;
+}
+
+header{
+    background-image: url(../Patrones/bg_verde.png);
+}
+
+.cabecera{
+    color: gray;
+}
+
+.cabecera p:last-child{
+    color: white;
+}
+
+main{
+    padding: 20px;
+}
+
+footer{
+    background-image: url(../Patrones/bg_gris.png);
+    padding: 20px;
+}
+
+footer p{
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .logos{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+footer .logos img:hover{
+    transform: scale(1.1);
+}
