@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f0f0;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+    gap: 10px;
+}
+
+/* === MOBILE FIRST: Layout IZQUIERDA (como la imagen) === */
+.amarillo, .verde, .azul, .naranja {
+    border: 1px solid #ddd; /* Para ver alineación */
+}
+
+.amarillo {
+    display: none; /* Oculto en móvil */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Verde: 1/3, Azul: 2/3 */
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "verde azul"
+        "naranja naranja";
+    gap: 10px;
+}
+
+.verde {
+    grid-area: verde;
+    background-color: green;
+    height: 55vh;
+}
+
+.azul {
+    grid-area: azul;
+    background-color: rgb(99, 90, 233);
+    height: 55vh;
+}
+
+.naranja {
+    grid-area: naranja;
+    background-color: orange;
+    height: 30vh;
+}
+
+/* === DESKTOP ≥768px: Layout DERECHA === */
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 8px;
+    }
+
+    .amarillo {
+        display: block;
+        background-color: yellow;
+        height: 15vh;
+        order: 1;
+    }
+
+    .verde {
+        height: 8vh;
+        order: 2;
+        background-color: green;
+    }
+
+    .azul {
+        height: 47vh;
+        order: 3;
+        background-color: rgb(99, 90, 233);
+    }
+
+    .naranja {
+        height: 30vh;
+        order: 4;
+        background-color: orange;
+    }
+}
