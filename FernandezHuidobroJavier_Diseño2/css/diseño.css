@@ -5,89 +5,89 @@
 }
 
 body {
-    background: #f0f0f0;
-    font-family: sans-serif;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 100vh;
     margin: 0 auto;
-    padding: 15px;
+    padding: 10px;
     gap: 10px;
+    background: #f8f8f8;
 }
 
-/* === MOBILE FIRST: Layout IZQUIERDA (como la imagen) === */
-.amarillo, .verde, .azul, .naranja {
-    border: 1px solid #ddd; /* Para ver alineación */
-}
-
+/* === BASE: ORDENADOR → EXACTO COMO TU IMAGEN === */
 .amarillo {
-    display: none; /* Oculto en móvil */
+    background-color: #ffff00;
+    height: 15vh;
+    border: 1px solid #ddd;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Verde: 1/3, Azul: 2/3 */
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "verde azul"
-        "naranja naranja";
+.fila-central {
+    display: flex;
     gap: 10px;
+    height: 50vh;
 }
 
 .verde {
-    grid-area: verde;
-    background-color: green;
-    height: 55vh;
+    background-color: #008000;
+    flex: 1; /* 1 parte → 33.33% */
+    border: 1px solid #ddd;
 }
 
 .azul {
-    grid-area: azul;
     background-color: rgb(99, 90, 233);
-    height: 55vh;
+    flex: 2; /* 2 partes → 66.67% */
+    border: 1px solid #ddd;
 }
 
 .naranja {
-    grid-area: naranja;
-    background-color: orange;
+    background-color: #ffa500;
     height: 30vh;
+    border: 1px solid #ddd;
 }
 
-/* === DESKTOP ≥768px: Layout DERECHA === */
-@media (min-width: 768px) {
+/* === MÓVIL ≤767px → Layout anterior (verde + azul + naranja) === */
+@media (max-width: 767px) {
     .container {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 8px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 55vh 30vh;
+        grid-template-areas:
+            "verde azul"
+            "naranja naranja";
+        gap: 10px;
+        padding: 10px;
     }
 
     .amarillo {
-        display: block;
-        background-color: yellow;
-        height: 15vh;
-        order: 1;
+        display: none;
+    }
+
+    .fila-central {
+        display: contents; /* Permite que verde y azul vayan al grid */
     }
 
     .verde {
-        height: 8vh;
-        order: 2;
-        background-color: green;
+        grid-area: verde;
+        height: 100%;
+        border: 1px solid #ddd;
     }
 
     .azul {
-        height: 47vh;
-        order: 3;
-        background-color: rgb(99, 90, 233);
+        grid-area: azul;
+        height: 100%;
+        border: 1px solid #ddd;
     }
 
     .naranja {
-        height: 30vh;
-        order: 4;
-        background-color: orange;
+        grid-area: naranja;
+        height: 100%;
+        border: 1px solid #ddd;
     }
 }
