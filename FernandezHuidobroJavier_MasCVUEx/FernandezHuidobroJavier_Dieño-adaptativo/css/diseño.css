@@ -1,0 +1,72 @@
+/* Reset básico para eliminar márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos base (móviles primero - pantallas pequeñas) */
+.amarillo {
+    background-color: yellow;
+    height: 10vh;
+    width: 100%;
+}
+
+.azul {
+    background-color: rgb(99, 90, 233);
+    height: 50vh;
+    width: 100%;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column; /* En móviles: naranja y verde en columna */
+    width: 100%;
+    height: 40vh; /* 38vh + margen ajustado */
+}
+
+.naranja, .verde {
+    height: 50%; /* Cada uno ocupa la mitad del contenedor en móviles */
+    width: 100%;
+}
+
+.naranja {
+    background-color: orange;
+}
+
+.verde {
+    background-color: green;
+}
+
+/* Punto de ruptura: pantallas grandes (≥768px) */
+@media (min-width: 768px) {
+    .contenedor {
+        flex-direction: row; /* En desktop: lado a lado */
+        height: 38vh;
+    }
+
+    .naranja, .verde {
+        width: 50%;
+        height: 100%;
+    }
+
+    /* Añadimos margen solo en desktop si es necesario, pero sin romper alineación */
+    .naranja {
+        margin-right: 5px;
+    }
+}
+
+/* Opcional: mejorar espaciado entre bloques */
+.amarillo { margin-bottom: 5px; }
+.azul { margin-bottom: 5px; }
+
+/* En móviles: eliminar margen lateral del naranja */
+@media (max-width: 767px) {
+    .naranja {
+        margin-right: 0;
+    }
+}
