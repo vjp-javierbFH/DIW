@@ -15,24 +15,18 @@ body {
 header {
     background-image: url('../Patrones/bg_verde.png');
     background-size: cover;
-    padding: 20px 40px;
-    position: relative;
-}
-
-.header-content {
+    padding: 20px 40px 0 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Apila verticalmente */
     align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
+    position: relative;
+    min-height: 120px;
+    border-bottom: 2px solid #4b5c3b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .logo-container {
-    margin-bottom: 15px;
-}
-
-.logo-container img {
-    height: 60px;
+    margin-bottom: 10px;
 }
 
 .cabecera {
@@ -40,6 +34,8 @@ header {
     gap: 30px;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .cabecera a {
@@ -48,31 +44,35 @@ header {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .cabecera a.login-link {
     color: white;
+    margin-left: auto;
 }
 
-/* Iconos de redes sociales */
 .social-icons {
+    position: absolute;
+    top: 20px;
+    right: 40px;
     display: flex;
     gap: 12px;
-    margin-top: 15px;
 }
 
 .social-icons i {
-    color: white;
-    font-size: 18px;
+    color: #fff;
+    font-size: 22px;
     width: 36px;
     height: 36px;
     background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    border: 2px solid #fff;
 }
 
 .social-icons i:hover {
@@ -88,6 +88,7 @@ main {
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .breadcrumb {
@@ -99,6 +100,8 @@ main {
 .inicio h2 {
     color: #333;
     margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .inicio hr {
@@ -106,9 +109,13 @@ main {
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
- .importante {
+
+.importante {
     font-size: small;
- }
+    color: #d00;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 .formulario {
     font-size: 14px;
@@ -146,6 +153,7 @@ main {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-entrar:hover {
@@ -160,6 +168,7 @@ footer {
     text-align: center;
     color: white;
     font-size: 14px;
+    margin: 0;
 }
 
 .footer-table {
@@ -181,7 +190,7 @@ footer {
 }
 
 .footer-table img:hover {
-    transform: scale(1.1); /* +10% al hacer hover */
+    transform: scale(1.1);
 }
 
 .footer-text {

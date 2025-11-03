@@ -15,22 +15,40 @@ body {
 header {
     background-image: url('../Patrones/bg_verde.png');
     background-size: cover;
-    padding: 20px 40px;
+    padding: 20px 40px 0 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
     position: relative;
-    min-height: 100px;
+    min-height: 120px;
+    border-bottom: 2px solid #4b5c3b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo-container {
+    flex: 0 0 auto;
 }
 
 .logo-container img {
     height: 60px;
 }
 
+.menu-and-social {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 300px;
+    position: relative;
+}
+
 .cabecera {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .cabecera a {
@@ -39,36 +57,40 @@ header {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .cabecera a.login-link {
     color: white;
+    margin-left: auto;
 }
 
 /* Iconos de redes sociales */
 .social-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     gap: 12px;
-    position: absolute;
-    top: 20px;
-    right: 40px;
+    padding: 10px 0 0 0;
 }
 
-.social-link {
-    color: white;
-    font-size: 18px;
+.social-icons i {
+    color: #fff;
+    font-size: 22px;
     width: 36px;
     height: 36px;
     background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #fff;
 }
 
-.social-link:hover {
+.social-icons i:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
 }
@@ -81,6 +103,7 @@ main {
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .breadcrumb {
@@ -92,6 +115,8 @@ main {
 .inicio h2 {
     color: #333;
     margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .inicio hr {
@@ -99,9 +124,13 @@ main {
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
- .importante {
+
+.importante {
     font-size: small;
- }
+    color: #d00;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 .formulario {
     font-size: 14px;
@@ -139,6 +168,7 @@ main {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-entrar:hover {
@@ -153,6 +183,7 @@ footer {
     text-align: center;
     color: white;
     font-size: 14px;
+    margin: 0;
 }
 
 .footer-table {
@@ -174,7 +205,7 @@ footer {
 }
 
 .footer-table img:hover {
-    transform: scale(1.1); /* +10% al hacer hover */
+    transform: scale(1.1);
 }
 
 .footer-text {
