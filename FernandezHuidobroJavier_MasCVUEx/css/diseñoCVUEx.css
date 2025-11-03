@@ -16,11 +16,19 @@ header {
     background-image: url('../Patrones/bg_verde.png');
     background-size: cover;
     padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
-    min-height: 100px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    margin-bottom: 15px;
 }
 
 .logo-container img {
@@ -31,6 +39,7 @@ header {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .cabecera a {
@@ -49,12 +58,10 @@ header {
 .social-icons {
     display: flex;
     gap: 12px;
-    position: absolute;
-    top: 20px;
-    right: 40px;
+    margin-top: 15px;
 }
 
-.social-link {
+.social-icons i {
     color: white;
     font-size: 18px;
     width: 36px;
@@ -64,11 +71,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.social-link:hover {
+.social-icons i:hover {
     background-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
 }
