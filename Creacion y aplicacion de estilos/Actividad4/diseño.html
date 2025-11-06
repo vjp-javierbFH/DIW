@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño adaptativo Mobile first</title>
+    <style>
+        body {
+            background-color: rgb(235, 195, 195);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 20px 0;
+            background-color: lightblue;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contenedor>div {
+            border-radius: 15px;
+            background-color: aliceblue;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: aparecer 0.8s ease forwards;
+        }
+
+        @keyframes aparecer {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fotografia h2{
+            text-align: center;
+        }
+
+        /* Animación al pasar el ratón por las imágenes */
+        .contenedor img {
+            transition: transform 0.4s cubic-bezier(.68, -0.55, .27, 1.55), box-shadow 0.4s;
+        }
+
+        .contenedor img:hover {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Animación de color al pasar el ratón por las tarjetas */
+        .contenedor>div:hover {
+            background-color: #e0f7fa;
+            transition: background 0.4s;
+        }
+
+        /* Punto de ruptura 1: ≥600px (Tablet) */
+        @media (min-width: 600px) {
+            .contenedor {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .contenedor>div {
+                width: 48%;
+            }
+        }
+
+        /* Punto de ruptura 2: ≥900px (Escritorio) */
+        @media (min-width: 900px) {
+            .contenedor>div {
+                width: 31%;
+            }
+        }
+
+        /* Punto de ruptura 3: ≥1200px (Pantalla grande) */
+        @media (min-width: 1200px) {
+            .contenedor>div {
+                width: 23%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mi biografía</h1>
+    <div class="contenedor">
+        <div class="fotografia">
+            <img src="recursos/gallina.webp" alt="foto">
+            <h2>Javier Fernández</h2>
+            <p>La imagen es del horóscopo de China el cual mi año de nacimiento coincide con el del gallo</p>
+        </div>
+        <div class="aficiones">
+            <h3>Mis aficiones</h3>
+            <img src="recursos/futbol.jpg" alt="aficion">
+        </div>
+        <div class="musica">
+            <h3>Canción favorita</h3>
+            <p>Mi canción favorita es:</p>
+            <img src="recursos/linkinpark.webp" alt="musica">
+            <p>Mis gustos son variados pero el que más me gusta es What I've done por la película Transformers</p>
+        </div>
+        <div class="cine">
+            <h3>Mi película favorita</h3>
+            <img src="recursos/spider-man.jpg" alt="peli">
+            <p>Me gustan pelis de acción y de ciencia ficción, sobre todo de superhéroes.</p>
+        </div>
+    </div>
+</body>
+
+</html>
