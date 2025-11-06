@@ -1,93 +1,101 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+/* Estilos generales de la página */
 body {
-    background: #ffffff;
-    font-family: Arial, sans-serif;
+	background: #fafafa; /* Fondo suave */
+	font-family: Arial, sans-serif;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 10px;
-    gap: 10px;
-    background: #f8f8f8;
+/* Contenedor principal blanco, centrado, sin sombra ni bordes redondeados */
+.contenedor {
+	max-width: 420px;
+	margin: 16px auto;
+	padding: 12px;
+	background: #fff;
+	box-shadow: none;
+	border-radius: 0;
+	box-sizing: border-box;
 }
 
-/* === BASE: ORDENADOR → EXACTO COMO TU IMAGEN === */
+/* Fila flexible para alinear los bloques horizontalmente */
+.fila {
+	display: flex;
+	gap: 12px; /* Espacio entre columnas */
+	margin-bottom: 12px;
+}
+
+/* Fila del medio (verde y azul) */
+.fila.medio {
+	gap: 12px;
+}
+
+/* Estilo base para todos los bloques */
+.bloque {
+	border-radius: 0;
+}
+
+/* Bloque amarillo superior */
 .amarillo {
-    background-color: #ffff00;
-    height: 15vh;
-    border: 1px solid #ddd;
+	background: #ffe600;
+	height: 40px;
+	width: 100%;
 }
 
-.fila-central {
-    display: flex;
-    gap: 10px;
-    height: 50vh;
-}
-
+/* Bloque verde lateral */
 .verde {
-    background-color: #008000;
-    flex: 1; /* 1 parte → 33.33% */
-    border: 1px solid #ddd;
+	background: #22b14c;
+	width: 32%;
+	height: 180px;
 }
 
+/* Bloque azul principal */
 .azul {
-    background-color: rgb(99, 90, 233);
-    flex: 2; /* 2 partes → 66.67% */
-    border: 1px solid #ddd;
+	background: #3a3ad6;
+	width: 68%;
+	height: 180px;
 }
 
+/* Bloque naranja inferior */
 .naranja {
-    background-color: #ffa500;
-    height: 30vh;
-    border: 1px solid #ddd;
+	background: #ff7f27;
+	height: 48px;
+	width: 100%;
 }
 
-/* === MÓVIL ≤767px → Layout anterior (verde + azul + naranja) === */
-@media (max-width: 767px) {
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 55vh 30vh;
-        grid-template-areas:
-            "verde azul"
-            "naranja naranja";
-        gap: 10px;
-        padding: 10px;
-    }
+/* --- Adaptabilidad: tablet --- */
+@media (max-width: 700px) {
+	.contenedor {
+		max-width: 98vw;
+		padding: 2vw;
+	}
+	.fila {
+		gap: 8px;
+		margin-bottom: 8px;
+	}
+	.verde, .azul {
+		height: 100px;
+	}
+	.amarillo, .naranja {
+		height: 32px;
+	}
+}
 
-    .amarillo {
-        display: none;
-    }
-
-    .fila-central {
-        display: contents; /* Permite que verde y azul vayan al grid */
-    }
-
-    .verde {
-        grid-area: verde;
-        height: 100%;
-        border: 1px solid #ddd;
-    }
-
-    .azul {
-        grid-area: azul;
-        height: 100%;
-        border: 1px solid #ddd;
-    }
-
-    .naranja {
-        grid-area: naranja;
-        height: 100%;
-        border: 1px solid #ddd;
-    }
+/* --- Adaptabilidad: móvil --- */
+@media (max-width: 500px) {
+	.contenedor {
+		padding: 1vw;
+	}
+	.fila, .fila.medio {
+		flex-direction: column; /* Apila los bloques verticalmente */
+		gap: 6px;
+	}
+	.verde, .azul, .amarillo, .naranja {
+		width: 100%;
+		min-width: 0;
+	}
+	.verde, .azul {
+		height: 60px;
+	}
+	.amarillo, .naranja {
+		height: 24px;
+	}
 }
