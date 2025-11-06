@@ -1,0 +1,145 @@
+
+/* Estilos generales de la página */
+body {
+	background: #fafafa; /* Fondo suave */
+	font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal blanco, centrado, sin sombra ni bordes redondeados */
+.contenedor {
+	/* Permitir layout amplio en pantallas grandes */
+	max-width: 960px;
+	margin: 24px auto;
+	padding: 18px;
+	background: #fff;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+	border-radius: 12px;
+	box-sizing: border-box;
+}
+
+/* Fila flexible para alinear los bloques horizontalmente */
+.fila {
+	display: flex;
+	gap: 12px; /* Espacio entre columnas */
+	margin-bottom: 12px;
+}
+
+/* Fila del medio (verde y azul) */
+.fila.medio {
+	gap: 12px;
+}
+
+/* Estilo base para todos los bloques */
+.bloque {
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/* Bloque rojo central (añadido) */
+.rojo {
+	background: #ed1c24;
+	width: 24%;
+	height: 220px;
+}
+
+/* Bloque amarillo superior */
+.amarillo {
+	background: #ffe600;
+	height: 48px;
+	width: 100%;
+	color: #111;
+	font-weight: 700;
+}
+
+/* Bloque verde lateral */
+.verde {
+	background: #22b14c;
+	width: 24%;
+	height: 220px;
+	color: #fff;
+}
+
+/* Bloque azul principal */
+.azul {
+	background: #3a3ad6;
+	width: 52%;
+	height: 220px;
+	color: #fff;
+}
+
+/* Bloque naranja inferior */
+.naranja {
+	background: #ff7f27;
+	height: 48px;
+	width: 100%;
+	color: #111;
+	font-weight: 700;
+}
+
+/* Texto dentro de los bloques */
+/* Nota: la clase .texto se eliminó del HTML. Si necesitas texto dentro de bloques,
+   reintroduce una etiqueta <span class="texto"> en el HTML o avísame. */
+
+/* --- Adaptabilidad: tablet --- */
+@media (max-width: 700px) {
+	.contenedor {
+		max-width: 98vw;
+		padding: 2vw;
+	}
+	.fila {
+		gap: 8px;
+		margin-bottom: 8px;
+	}
+	/* En tablet: verde y azul se mantienen en fila, pero el rojo pasa a franja completa */
+	.fila.medio{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+	.verde, .azul {
+		height: 180px;
+	}
+	.rojo{
+		width: 100%;
+		height: 40px;
+		margin-top: 8px;
+	}
+	.amarillo, .naranja {
+		height: 32px;
+	}
+}
+
+/* --- Adaptabilidad: móvil --- */
+@media (max-width: 500px) {
+	.contenedor {
+		padding: 1vw;
+	}
+	.fila, .fila.medio {
+		flex-direction: column; /* Apila los bloques verticalmente */
+		gap: 6px;
+	}
+	.verde, .azul, .rojo, .amarillo, .naranja {
+		width: 100%;
+		min-width: 0;
+	}
+	.verde, .azul, .rojo {
+		height: 84px;
+	}
+	.amarillo, .naranja {
+		height: 24px;
+	}
+}
+
+/* --- Punto de ruptura adicional: ocultar el bloque rojo en pantallas muy pequeñas --- */
+@media (max-width: 360px) {
+	.rojo {
+		display: none;
+	}
+	/* Reducir un poco las alturas para dispositivos muy pequeños */
+	.verde, .azul {
+		height: 72px;
+	}
+}
