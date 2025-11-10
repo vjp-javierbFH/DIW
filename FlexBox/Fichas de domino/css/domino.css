@@ -1,0 +1,190 @@
+body {
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.domino-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ficha {
+    width: 120px;
+    height: 240px;
+    background: #fff;
+    border: 2px solid #444;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cara {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.separador {
+    width: 80%;
+    height: 6px;
+    background: #444;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.puntos {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Puntos base */
+.punto {
+    width: 16px;
+    height: 16px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Cara 0 */
+.cero {}
+
+/* Cara 1 */
+.uno .punto {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cara 2 */
+.dos .punto:nth-child(1) {
+    top: 20%;
+    left: 20%;
+}
+
+.dos .punto:nth-child(2) {
+    bottom: 20%;
+    right: 20%;
+}
+
+/* Cara 3 */
+.tres .punto:nth-child(1) {
+    top: 20%;
+    left: 20%;
+}
+
+.tres .punto:nth-child(2) {
+    bottom: 20%;
+    right: 20%;
+}
+
+.tres .punto:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cara 4 */
+.cuatro .punto:nth-child(1) {
+    top: 20%;
+    left: 20%;
+}
+
+.cuatro .punto:nth-child(2) {
+    top: 20%;
+    right: 20%;
+}
+
+.cuatro .punto:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+}
+
+.cuatro .punto:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+}
+
+/* Cara 5 */
+.cinco .punto:nth-child(1) {
+    top: 20%;
+    left: 20%;
+}
+
+.cinco .punto:nth-child(2) {
+    top: 20%;
+    right: 20%;
+}
+
+.cinco .punto:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+}
+
+.cinco .punto:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+}
+
+.cinco .punto:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cara 6 */
+.seis .punto:nth-child(1) {
+    top: 15%;
+    left: 20%;
+}
+
+.seis .punto:nth-child(2) {
+    top: 15%;
+    right: 20%;
+}
+
+.seis .punto:nth-child(3) {
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+
+.seis .punto:nth-child(4) {
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+}
+
+.seis .punto:nth-child(5) {
+    bottom: 15%;
+    left: 20%;
+}
+
+.seis .punto:nth-child(6) {
+    bottom: 15%;
+    right: 20%;
+}
+
+/* Generar los puntos con pseudo-elementos usando JS o HTML */
+.uno::before,
+.dos::before,
+.tres::before,
+.cuatro::before,
+.cinco::before,
+.seis::before {
+    display: none;
+}
+
+/* Añade los puntos en el HTML */
