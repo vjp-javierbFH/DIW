@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.caras {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.caras > div {
+    width: 80px;
+    height: 80px;
+    background: #d81e3a;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Estilo general para los puntos */
+.punto {
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Cara 1 */
+.uno::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* Cara 2 */
+.dos::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.dos::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* Cara 3 */
+.tres::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.tres::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.tres .punto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cara 4 */
+.cuatro .punto {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.cuatro .punto:nth-child(1) { top: 15px; left: 15px; }
+.cuatro .punto:nth-child(2) { top: 15px; right: 15px; }
+.cuatro .punto:nth-child(3) { bottom: 15px; left: 15px; }
+.cuatro .punto:nth-child(4) { bottom: 15px; right: 15px; }
+
+/* Cara 5 */
+.cinco .punto {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.cinco .punto:nth-child(1) { top: 15px; left: 15px; }
+.cinco .punto:nth-child(2) { top: 15px; right: 15px; }
+.cinco .punto:nth-child(3) { bottom: 15px; left: 15px; }
+.cinco .punto:nth-child(4) { bottom: 15px; right: 15px; }
+.cinco .punto:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Cara 6 */
+.seis .punto {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+}
+.seis .punto:nth-child(1) { top: 15px; left: 15px; }
+.seis .punto:nth-child(2) { top: 15px; right: 15px; }
+.seis .punto:nth-child(3) { top: 50%; left: 15px; transform: translateY(-50%); }
+.seis .punto:nth-child(4) { top: 50%; right: 15px; transform: translateY(-50%); }
+.seis .punto:nth-child(5) { bottom: 15px; left: 15px; }
+.seis .punto:nth-child(6) { bottom: 15px; right: 15px; }
