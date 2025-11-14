@@ -1,16 +1,116 @@
-.responsive--tabs{
+* {
+    margin: 0;
+}
+
+.responsive-tabs {
     margin-top: 0px;
 }
 
-.responsive--tabs .estado {
+.responsive-tabs .estado {
     display: none;
 }
 
-.responsive-tabs .flex-tabs .panel{
+.responsive-tabs .flex-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*Por defecto tociclos ocultos*/
+.responsive-tabs .flex-tabs .panel {
     background-color: #FFF;
     padding: 20px;
     min-height: 250px;
     width: 100%;
     flex-basis: auto;
     display: none;
+    flex-basis: auto;
+}
+
+.responsive-tabs .tab {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #c7c1c1;
+}
+
+.responsive-tabs .tab:hover {
+    color: rgb(0, 119, 255);
+}
+
+/*Estilos para los label*/
+.tabs .tab::first-letter {
+    font-size: 2.5rem;
+}
+
+/* Al seleccionarlo cambiamos estilo del label */
+#tab-inicio:checked~.tabs #tab-inicio-label,
+#tab-ciclos:checked~.tabs #tab-ciclos-label,
+#tab-fct:checked~.tabs #tab-fct-label,
+#tab-contacto:checked~.tabs #tab-contacto-label,
+#tab-campus:checked~.tabs #tab-campus-label {
+    background-color: rgb(0, 119, 255);
+    cursor: default;
+    font-weight: bold;
+    color: white;
+    border-bottom: none;
+}
+
+#tab-inicio:checked~.tabs #tab-inicio-panel,
+#tab-ciclos:checked~.tabs #tab-ciclos-panel,
+#tab-fct:checked~.tabs #tab-fct-panel,
+#tab-contacto:checked~.tabs #tab-contacto-panel,
+#tab-campus:checked~.tabs #tab-campus-panel {
+    display: block;
+}
+
+@media (max-width: 700px) {
+
+    .flex-tabs {
+        flex-direction: column;
+    }
+
+    
+
+    /* Asociamos cada etiqueta a cada panel para que se muestre forma correcta */
+    .flex-tabs #tab-inicio-label {
+        order: 1;
+    }
+
+    .flex-tabs #tab-ciclos-label {
+        order: 3;
+    }
+
+    .flex-tabs #tab-fct-label {
+        order: 5;
+    }
+
+    .flex-tabs #tab-contacto-label {
+        order: 7;
+    }
+
+    .flex-tabs #tab-campus-label {
+        order: 9
+    }
+
+    .flex-tabs #tab-inicio-panel {
+        order: 2;
+    }
+
+    .flex-tabs #tab-ciclos-panel {
+        order: 4;
+    }
+
+    .flex-tabs #tab-fct-panel {
+        order: 6;
+    }
+
+    .flex-tabs #tab-cuatro-panel {
+        order: 8;
+    }
+
+    .flex-tabs #tab-campus-panel {
+        order: 10;
+    }
 }
