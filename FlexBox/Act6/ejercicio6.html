@@ -22,23 +22,24 @@
     <div class="main-container">
         <main class="main">
             <div class="responsive-tabs">
-                <!-- Inputs de control -->
+                <!-- Inputs de control (todos con mismo name) -->
                 <input class="estado" type="radio" name="tabs" id="tab-inicio" checked>
                 <input class="estado" type="radio" name="tabs" id="tab-ciclos">
                 <input class="estado" type="radio" name="tabs" id="tab-fct">
                 <input class="estado" type="radio" name="tabs" id="tab-contacto">
                 <input class="estado" type="radio" name="tabs" id="tab-campus">
 
-                <!-- Pestañas -->
+                <!-- Contenedor de pestañas y paneles -->
                 <div class="tabs flex-tabs">
+                    <!-- Pestañas (labels) -->
                     <label for="tab-inicio" id="tab-inicio-label" class="tab">INICIO</label>
                     <label for="tab-ciclos" id="tab-ciclos-label" class="tab">CICLOS FORMATIVOS</label>
                     <label for="tab-fct" id="tab-fct-label" class="tab">FCT</label>
                     <label for="tab-contacto" id="tab-contacto-label" class="tab">CONTACTO</label>
                     <label for="tab-campus" id="tab-campus-label" class="tab">CAMPUS VIRTUAL</label>
 
-                    <!-- PANEL INICIO -->
-                    <div id="tab-inicio-panel" class="panel active">
+                    <!-- Paneles (deben ir DESPUÉS de las labels) -->
+                    <div id="tab-inicio-panel" class="panel">
                         <p>El IES Valle del Jerte es uno de los centros de referencia en la ciudad de Plasencia.</p>
                         <p>Cuenta con 765 alumnos pertenecientes a:</p>
                         <ul>
@@ -50,12 +51,12 @@
                         <img src="img/fotoIES.jpg" alt="Edificio IES" width="700" height="400">
                     </div>
 
-                    <!-- PANEL CICLOS -->
                     <div id="tab-ciclos-panel" class="panel">
                         <img src="img/Ciclos.jpg" alt="Ciclos Formativos" width="880" height="300">
-                        <p>Ofrecemos una amplia oferta de Formación Profesional reglada de la familia de Informática y Comunicaciones:</p>
+                        <p>Ofrecemos una amplia oferta de Formación Profesional reglada de la familia de Informática y
+                            Comunicaciones:</p>
                         <ul>
-                            <li>Formación Profesional Básica de Informática de Oficina</li>
+                            <li>Formación Profesional básicade Informática de Oficina</li>
                             <li>Ciclo Formativo de Grado Medio de Sistemas Microinformáticos y Redes</li>
                             <li>Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma</li>
                             <li>Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web</li>
@@ -64,39 +65,47 @@
                         <img src="img/alumnos.jpg" alt="Alumnos en laboratorio" width="900" height="350">
                     </div>
 
-                    <!-- PANEL FCT -->
                     <div id="tab-fct-panel" class="panel">
-                        <p>Colaboramos con decenas de empresas del sector para ofrecer oportunidades de empleo para nuestros alumnos egresados:</p>
+                        <p>Colaboramos con decenas de empresas del sector para ofrecer oportunidades de empleo para
+                            nuestros alumnos egresados:</p>
                         <img src="img/FCT.jpg" alt="Empresas colaboradoras" width="800" height="290">
                         <img src="img/ErasmusPlus.jpg" alt="Erasmus+" width="850" height="300">
                     </div>
 
-                    <!-- PANEL CONTACTO -->
+                    <!-- PANEL CONTACTO (CORREGIDO) -->
                     <div id="tab-contacto-panel" class="panel">
-                        <p><strong>Dirección:</strong> Calle Pedro y Francisco González, s/n, 10600 Plasencia, Cáceres</p>
+                        <p><strong>Dirección:</strong> Calle Pedro y Francisco González, s/n, 10600 Plasencia, Cáceres
+                        </p>
                         <p><strong>Teléfono:</strong> 927 01 77 74</p>
                         <p><strong>Email:</strong> ies.valledeljerte@edu.juntaex.es</p>
                         <div id="mapa">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.123456789!2d-6.091234!3d40.028456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd15a1b2c3d4e5f7%3A0x1234567890abcdef!2sIES%20Valle%20del%20Jerte!5e0!3m2!1ses!2ses!4v1634567890000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.123456789!2d-6.091234!3d40.028456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd15a1b2c3d4e5f7%3A0x1234567890abcdef!2sIES%20Valle%20del%20Jerte!5e0!3m2!1ses!2ses!4v1634567890000"
+                                width=" column-count: 2;100%" height="400"
+                                style="border:0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
+                                allowfullscreen="" loading="lazy">
+                            </iframe>
                         </div>
                     </div>
 
-                    <!-- PANEL CAMPUS -->
                     <div id="tab-campus-panel" class="panel">
-                        <p>Disponemos de un Campus Virtual bajo la tecnología de Moodle para dar soporte a toda la docencia presencial de nuestros Ciclos Formativos:</p>
+                        <p>Disponemos de un Campus Virtual bajo la tecnología de Moodle para dar soporte a toda la
+                            docencia presencial de nuestros Ciclos Formativos:</p>
                         <img src="img/Moodle.jpg" alt="Campus Virtual Moodle" width="800" height="350">
                         <p>Puedes acceder a él a través de este enlace.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ASIDE -->
+            <!-- ASIDE (mantiene tus cambios) -->
             <aside>
                 <a href="#"><img src="img/aside_FPB.png" alt="FP Básica Informática de Oficina" width="200"></a>
                 <a href="#"><img src="img/aside_SMR.png" alt="Sistemas Microinformáticos y Redes" width="200"></a>
-                <a href="#"><img src="img/aside_DAM.png" alt="Desarrollo de Aplicaciones Multiplataforma" width="200"></a>
+                <a href="#"><img src="img/aside_DAM.png" alt="Desarrollo de Aplicaciones Multiplataforma"
+                        width="200"></a>
                 <a href="#"><img src="img/aside_DAW.png" alt="Desarrollo de Aplicaciones Web" width="200"></a>
-                <a href="#"><img src="img/aside_ASIR.png" alt="Administración de Sistemas Informáticos en Red" width="200"></a>
+                <a href="#"><img src="img/aside_ASIR.png" alt="Administración de Sistemas Informáticos en Red"
+                        width="200"></a>
             </aside>
         </main>
     </div>
