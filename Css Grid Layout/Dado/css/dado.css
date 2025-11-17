@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Contenedor principal: Grid 3x3 */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    grid-template-rows: repeat(3, 220px);
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Estilo base de cada cara del dado */
+.dado {
+    background: #c6284f;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+.dado.vacio {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Estilo de cada punto (blanco y redondo) */
+.punto {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+/* === POSICIONES ESPECÍFICAS POR CARA === */
+
+/* Cara 1: Punto en el centro */
+.uno .punto:nth-child(1) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Cara 2: Puntos en esquinas opuestas (diagonal) */
+.dos .punto:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dos .punto:nth-child(2) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Cara 3: Puntos en diagonal con centro */
+.tres .punto:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tres .punto:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.tres .punto:nth-child(3) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Cara 4: Puntos en las 4 esquinas */
+.cuatro .punto:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cuatro .punto:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.cuatro .punto:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.cuatro .punto:nth-child(4) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Cara 5: 4 esquinas + centro */
+.cinco .punto:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cinco .punto:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.cinco .punto:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.cinco .punto:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.cinco .punto:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/* Cara 6: 3 columnas de 2 puntos cada una */
+.seis .punto:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.seis .punto:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.seis .punto:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.seis .punto:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.seis .punto:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.seis .punto:nth-child(6) {
+    grid-column: 3;
+    grid-row: 3;
+}
