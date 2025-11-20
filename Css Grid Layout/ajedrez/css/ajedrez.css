@@ -1,0 +1,121 @@
+body {
+    margin: 40px;
+    background: #cfcfcf;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tablero {
+    width: 640px;
+    height: 640px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40px repeat(8, 70px) 40px;
+    grid-template-rows: 40px repeat(8, 70px) 40px;
+    background: #ffcd81;
+    border: 3px solid #b58763;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.casilla {
+    width: 70px;
+    height: 70px;
+}
+
+.blanca {
+    background: white;
+}
+
+.negra {
+    background: black;
+}
+
+.coords {
+    grid-column: 2 / span 8;
+    display: grid;
+    grid-template-columns: repeat(8, 70px);
+}
+
+.coords span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+}
+
+.top {
+    grid-row: 1;
+}
+
+.bottom {
+    grid-row: 10;
+}
+
+.fila {
+    display: contents;
+}
+
+.num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+    background: #ffcd81;
+}
+
+/* Números en los laterales */
+.fila:nth-child(2) .num:nth-child(1),
+.fila:nth-child(2) .num:nth-child(10) {
+    grid-row: 2;
+}
+
+.fila:nth-child(3) .num:nth-child(1),
+.fila:nth-child(3) .num:nth-child(10) {
+    grid-row: 3;
+}
+
+.fila:nth-child(4) .num:nth-child(1),
+.fila:nth-child(4) .num:nth-child(10) {
+    grid-row: 4;
+}
+
+.fila:nth-child(5) .num:nth-child(1),
+.fila:nth-child(5) .num:nth-child(10) {
+    grid-row: 5;
+}
+
+.fila:nth-child(6) .num:nth-child(1),
+.fila:nth-child(6) .num:nth-child(10) {
+    grid-row: 6;
+}
+
+.fila:nth-child(7) .num:nth-child(1),
+.fila:nth-child(7) .num:nth-child(10) {
+    grid-row: 7;
+}
+
+.fila:nth-child(8) .num:nth-child(1),
+.fila:nth-child(8) .num:nth-child(10) {
+    grid-row: 8;
+}
+
+.fila:nth-child(9) .num:nth-child(1),
+.fila:nth-child(9) .num:nth-child(10) {
+    grid-row: 9;
+}
+
+.fila .num:first-child {
+    grid-column: 1;
+}
+
+.fila .num:last-child {
+    grid-column: 10;
+}
