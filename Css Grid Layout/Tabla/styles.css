@@ -1,0 +1,436 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #fff;
+    --alkali-color: #ffcc00;
+    --alkaline-earth-color: #ffff00;
+    --transition-color: #ff6666;
+    --post-transition-color: #4da6ff;
+    --metalloid-color: #00cc99;
+    --non-metal-color: #00ff00;
+    --halogen-color: #ff00ff;
+    --noble-gas-color: #3399ff;
+    --lanthanide-color: #ff99cc;
+    --actinide-color: #cc99ff;
+    --unknown-color: #cccccc;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* Stack h1 and table vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 60px);
+    grid-template-rows: repeat(10, 60px);
+    gap: 5px;
+    max-width: 100%;
+}
+
+.element {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    grid-column: 1;
+    grid-row: 1;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    padding: 2px;
+    position: relative;
+    background-color: transparent;
+}
+
+.element:hover {
+    background-color: white;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.element .number {
+    font-size: 0.7em;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.element .symbol {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.element .name {
+    font-size: 0.55em;
+    text-align: center;
+}
+
+.element .weight {
+    font-size: 0.5em;
+    display: none;
+}
+
+/* Group Colors */
+.alkali {
+    --group-color: var(--alkali-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.alkaline-earth {
+    --group-color: var(--alkaline-earth-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.transition {
+    --group-color: var(--transition-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.post-transition {
+    --group-color: var(--post-transition-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.metalloid {
+    --group-color: var(--metalloid-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.non-metal {
+    --group-color: var(--non-metal-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.halogen {
+    --group-color: var(--halogen-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.noble-gas {
+    --group-color: var(--noble-gas-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.lanthanide {
+    --group-color: var(--lanthanide-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+.actinide {
+    --group-color: var(--actinide-color);
+    color: var(--group-color);
+    border-color: var(--group-color);
+}
+
+/* Specific Positioning */
+/* Period 1 */
+.h {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.he {
+    grid-column: 18;
+    grid-row: 1;
+}
+
+/* Period 2 */
+.li {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.be {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.b {
+    grid-column: 13;
+    grid-row: 2;
+}
+
+.c {
+    grid-column: 14;
+    grid-row: 2;
+}
+
+.n {
+    grid-column: 15;
+    grid-row: 2;
+}
+
+.o {
+    grid-column: 16;
+    grid-row: 2;
+}
+
+.f {
+    grid-column: 17;
+    grid-row: 2;
+}
+
+.ne {
+    grid-column: 18;
+    grid-row: 2;
+}
+
+/* Period 3 */
+.na {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.mg {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.al {
+    grid-column: 13;
+    grid-row: 3;
+}
+
+.si {
+    grid-column: 14;
+    grid-row: 3;
+}
+
+.p {
+    grid-column: 15;
+    grid-row: 3;
+}
+
+.s {
+    grid-column: 16;
+    grid-row: 3;
+}
+
+.cl {
+    grid-column: 17;
+    grid-row: 3;
+}
+
+.ar {
+    grid-column: 18;
+    grid-row: 3;
+}
+
+/* Period 4 */
+.k {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.ca {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.ga {
+    grid-column: 13;
+    grid-row: 4;
+}
+
+.ge {
+    grid-column: 14;
+    grid-row: 4;
+}
+
+.as {
+    grid-column: 15;
+    grid-row: 4;
+}
+
+.se {
+    grid-column: 16;
+    grid-row: 4;
+}
+
+.br {
+    grid-column: 17;
+    grid-row: 4;
+}
+
+.kr {
+    grid-column: 18;
+    grid-row: 4;
+}
+
+/* Period 5 */
+.rb {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.sr {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.in {
+    grid-column: 13;
+    grid-row: 5;
+}
+
+.sn {
+    grid-column: 14;
+    grid-row: 5;
+}
+
+.sb {
+    grid-column: 15;
+    grid-row: 5;
+}
+
+.te {
+    grid-column: 16;
+    grid-row: 5;
+}
+
+.i {
+    grid-column: 17;
+    grid-row: 5;
+}
+
+.xe {
+    grid-column: 18;
+    grid-row: 5;
+}
+
+/* Period 6 */
+.cs {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+.ba {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+.tl {
+    grid-column: 13;
+    grid-row: 6;
+}
+
+.pb {
+    grid-column: 14;
+    grid-row: 6;
+}
+
+.bi {
+    grid-column: 15;
+    grid-row: 6;
+}
+
+.po {
+    grid-column: 16;
+    grid-row: 6;
+}
+
+.at {
+    grid-column: 17;
+    grid-row: 6;
+}
+
+.rn {
+    grid-column: 18;
+    grid-row: 6;
+}
+
+/* Period 7 */
+.fr {
+    grid-column: 1;
+    grid-row: 7;
+}
+
+.ra {
+    grid-column: 2;
+    grid-row: 7;
+}
+
+.nh {
+    grid-column: 13;
+    grid-row: 7;
+}
+
+.fl {
+    grid-column: 14;
+    grid-row: 7;
+}
+
+.mc {
+    grid-column: 15;
+    grid-row: 7;
+}
+
+.lv {
+    grid-column: 16;
+    grid-row: 7;
+}
+
+.ts {
+    grid-column: 17;
+    grid-row: 7;
+}
+
+.og {
+    grid-column: 18;
+    grid-row: 7;
+}
+
+/* Lanthanides & Actinides */
+.lanthanide-row {
+    grid-row: 9;
+}
+
+.actinide-row {
+    grid-row: 10;
+}
+
+/* Legend */
+.legend {
+    grid-column: 1 / 4;
+    grid-row: 9 / 13;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-left: 20px;
+    align-self: end;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.legend-box {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border: 1px solid;
+}

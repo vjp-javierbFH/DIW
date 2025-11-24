@@ -4,120 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/ajedrez.css">
     <title>Mi tablero de Ajedrez con Grid CSS Layout</title>
+    <link rel="stylesheet" href="ajedrez.css">
 </head>
 
 <body>
-    <h1>Mi tablero de Ajedrez con Grid CSS Layout</h1>
+    <div class="container">
+        <h1>Mi tablero de Ajedrez con Grid CSS Layout</h1>
 
-    <div class="tablero">
-        <!-- Letras arriba: invertidas -->
-        <div class="coords top">
-            <span>h</span><span>g</span><span>f</span><span>e</span><span>d</span><span>c</span><span>b</span><span>a</span>
-        </div>
+        <div class="marco">
+            <!-- Letras arriba -->
+            <div class="letras-arriba">
+                <span></span><span>a</span><span>b</span><span>c</span><span>d</span>
+                <span>e</span><span>f</span><span>g</span><span>h</span>
+            </div>
 
-        <!-- 8 filas del tablero -->
-        <div class="fila">
-            <div class="num">8</div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="num">8</div>
-        </div>
-        <div class="fila">
-            <div class="num">7</div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="num">7</div>
-        </div>
-        <div class="fila">
-            <div class="num">6</div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="num">6</div>
-        </div>
-        <div class="fila">
-            <div class="num">5</div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="num">5</div>
-        </div>
-        <div class="fila">
-            <div class="num">4</div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="num">4</div>
-        </div>
-        <div class="fila">
-            <div class="num">3</div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="num">3</div>
-        </div>
-        <div class="fila">
-            <div class="num">2</div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="num">2</div>
-        </div>
-        <div class="fila">
-            <div class="num">1</div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="casilla negra"></div>
-            <div class="casilla blanca"></div>
-            <div class="num">1</div>
-        </div>
+            <div class="grid-principal">
+                <!-- Números izquierda -->
+                <div class="numeros-izq">
+                    <span>8</span><span>7</span><span>6</span><span>5</span>
+                    <span>4</span><span>3</span><span>2</span><span>1</span>
+                </div>
 
-        <!-- Letras abajo: normales -->
-        <div class="coords bottom">
-            <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+                <!-- TABLERO CON PIEZAS -->
+                <div class="tablero">
+                    <!-- Fila 8 (negras) -->
+                    <div class="n t"></div>
+                    <div class="b h"></div>
+                    <div class="n g"></div>
+                    <div class="b f"></div>
+                    <div class="n k"></div>
+                    <div class="b d"></div>
+                    <div class="n j"></div>
+                    <div class="b t"></div>
+
+                    <!-- Fila 7 (peones negros) -->
+                    <div class="b p"></div>
+                    <div class="n p"></div>
+                    <div class="b p"></div>
+                    <div class="n p"></div>
+                    <div class="b p"></div>
+                    <div class="n p"></div>
+                    <div class="b p"></div>
+                    <div class="n p"></div>
+
+                    <!-- Filas 6 a 3 vacías -->
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+                    <div class="b"></div>
+                    <div class="n"></div>
+
+                    <!-- Fila 2 (peones blancos) -->
+                    <div class="n o"></div>
+                    <div class="b o"></div>
+                    <div class="n o"></div>
+                    <div class="b o"></div>
+                    <div class="n o"></div>
+                    <div class="b o"></div>
+                    <div class="n o"></div>
+                    <div class="b o"></div>
+
+                    <!-- Fila 1 (blancas) -->
+                    <div class="b T"></div>
+                    <div class="n H"></div>
+                    <div class="b G"></div>
+                    <div class="n F"></div>
+                    <div class="b K"></div>
+                    <div class="n D"></div>
+                    <div class="b J"></div>
+                    <div class="n T"></div>
+                </div>
+
+                <!-- Números derecha -->
+                <div class="numeros-der">
+                    <span>8</span><span>7</span><span>6</span><span>5</span>
+                    <span>4</span><span>3</span><span>2</span><span>1</span>
+                </div>
+            </div>
+
+            <!-- Letras abajo -->
+            <div class="letras-abajo">
+                <span>a</span><span>b</span><span>c</span><span>d</span>
+                <span>e</span><span>f</span><span>g</span><span>h</span>
+            </div>
         </div>
     </div>
 </body>
