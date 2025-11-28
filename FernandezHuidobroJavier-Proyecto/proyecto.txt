@@ -1,0 +1,3 @@
+Página de bienvenida:
+    1 - Qué es y a qué se dedica la empresa.
+    2 - Incluye enlaces a las páginas de inicio de sesión y registro, departamento de la empresa, descripción de un elemento, búsquedas y resumen del pedido.
