@@ -1,9 +1,15 @@
 /* Estilos para página de bienvenida */
 /* Cuerpo */
-body {
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%; /* para que los rows en fr funcionen */
 }
+
+body {
+    overflow: hidden;
+}
+
 
 /* Grid CSS Layout */
 .contenedor {
@@ -61,4 +67,10 @@ body {
     text-align: center;
     color: white;
     padding: 25px;
+}
+
+.descripcion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
