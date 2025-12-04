@@ -8,20 +8,20 @@ body {
 /* Grid CSS Layout */
 .contenedor {
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
-    grid-template-rows: 150px 350px 250px;
+    grid-template-columns: 0.5fr 2.5fr 0.5fr;
+    grid-template-rows: 150px 500px 85px;
     grid-template-areas: "cabecera cabecera cabecera"
                          "izquierda descripcion enlaces"
                          "pie pie pie";
 }
 
 .cabecera {
-    background-color: black;
+    background-color: rgb(25, 25, 25);
     grid-area: cabecera;
 }
 
 .izquierda {
-    background-color: black;
+    background-color: rgb(25, 25, 25);
     grid-area: izquierda;
 }
 
@@ -31,11 +31,34 @@ body {
 }
 
 .enlaces {
-    background-color: black;
+    background-color: rgb(25, 25, 25);
     grid-area: enlaces;
 }
 
 .pie {
-    background-color: black;
+    background-color: rgb(25, 25, 25);
     grid-area: pie;
+}
+
+/* Cabecera */
+.cabecera h1 {
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+/* .cabecera div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+} */
+
+/* Pie */
+.pie p {
+    text-align: center;
+    color: white;
+    padding: 25px;
 }
