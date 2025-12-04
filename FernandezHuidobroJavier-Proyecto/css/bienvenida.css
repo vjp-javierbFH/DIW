@@ -1,1 +1,41 @@
 /* Estilos para página de bienvenida */
+/* Cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid CSS Layout */
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 150px 350px 250px;
+    grid-template-areas: "cabecera cabecera cabecera"
+                         "izquierda descripcion enlaces"
+                         "pie pie pie";
+}
+
+.cabecera {
+    background-color: black;
+    grid-area: cabecera;
+}
+
+.izquierda {
+    background-color: black;
+    grid-area: izquierda;
+}
+
+.descripcion {
+    background-color: white;
+    grid-area: descripcion;
+}
+
+.enlaces {
+    background-color: black;
+    grid-area: enlaces;
+}
+
+.pie {
+    background-color: black;
+    grid-area: pie;
+}
