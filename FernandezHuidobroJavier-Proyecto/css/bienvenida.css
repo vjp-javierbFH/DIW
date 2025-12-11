@@ -3,7 +3,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* para que los rows en fr funcionen */
+    height: 100%;
 }
 
 body {
@@ -14,8 +14,9 @@ body {
 /* Grid CSS Layout */
 .contenedor {
     display: grid;
+    height: 100vh;
     grid-template-columns: 0.5fr 2.5fr 0.5fr;
-    grid-template-rows: 150px 500px 85px;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: "cabecera cabecera cabecera"
                          "izquierda descripcion enlaces"
                          "pie pie pie";
