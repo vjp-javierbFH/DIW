@@ -1,6 +1,7 @@
 /* Estilos para página de bienvenida */
 /* Cuerpo */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -20,33 +21,42 @@ body {
     grid-template-columns: 0.5fr 2.5fr 0.5fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: "cabecera cabecera cabecera"
-                         "izquierda centro derecha"
-                         "pie pie pie";
-}   
+        "izquierda centro derecha"
+        "pie pie pie";
+}
 
 .cabecera {
     background-color: #1a1717;
     grid-area: cabecera;
 }
 
-/* Aside izquierda */
-aside.izquierda {
+/* Cabecera */
+.cabecera h1 {
+    text-align: center;
+    color: white;
+    padding: 25px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+/* Aside derecha */
+aside.derecha {
     background-color: #1a1717;
-    grid-area: izquierda;
+    grid-area: derecha;
     text-align: center;
     color: white;
     padding: 25px;
 }
 
-aside.izquierda ul{
+aside.derecha ul {
     list-style-type: none;
 }
 
-aside.izquierda ul li{
+aside.derecha ul li {
     margin-bottom: 5px;
 }
 
-aside.izquierda ul li.drama:hover{
+aside.derecha ul li.drama:hover {
     background-color: aqua;
 }
 
@@ -55,24 +65,10 @@ aside.izquierda ul li.drama:hover{
     grid-area: centro;
 }
 
-.derecha {
-    background-color:#1a1717;
-    grid-area: derecha;
-}
-
 .pie {
     background-color: #1a1717;
     grid-area: pie;
 }
-
-/* Cabecera */
-.cabecera h1 {
-    text-align: center;
-    color: white;
-    padding: 25px;
-}
-
-
 
 /* Pie */
 .pie p {
@@ -88,7 +84,8 @@ aside.izquierda ul li.drama:hover{
 }
 
 /* Estilos de las cintas */
-.cabecera, .pie {
+.cabecera,
+.pie {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -96,7 +93,8 @@ aside.izquierda ul li.drama:hover{
 }
 
 /* Estilos de la clase cuadrado de cine */
-.cabecera .cuadrado, .pie .cuadrado {
+.cabecera .cuadrado,
+.pie .cuadrado {
     background-color: #ddd;
     width: 150px;
     height: 100px;
@@ -112,4 +110,53 @@ aside.izquierda ul li.drama:hover{
     background-size: cover;
     background-position: center;
     opacity: 0.5;
+}
+
+/* Estilos para Movil */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-rows: 0px 1fr auto;
+        grid-template-areas:
+            "cabecera izquierda pie"
+            "cabecera centro pie"
+            "cabecera derecha pie";
+    }
+
+    .cabecera,
+    .pie {
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px 0;
+        height: 100%;
+    }
+
+    .cabecera h1 {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: 2rem;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    /* Ajuste de los cuadrados para parecer cinta de cine vertical */
+    .cabecera .cuadrado,
+    .pie .cuadrado {
+        width: 50px;
+        height: 35px;
+        margin: 5px 0;
+        flex-shrink: 0;
+    }
+
+    /* Ajustar contenido central */
+    .centro {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        /* Asegurar espacio para la imagen */
+    }
+
+    aside.derecha {
+        padding: 10px;
+    }
 }
