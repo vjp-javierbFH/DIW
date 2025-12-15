@@ -1,7 +1,42 @@
 /* Estilo css general para los géneros de películas */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: italic, sans-serif;
+    background-color: white;
+    color: black;
+}
+
 header{
-    background-color: #4CAF50;
+    background-color: #1A1717;
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+.contenido {
+    max-width: max-content;
+    margin: auto;
+}
+
+.main {
+    display: flex;
+    gap: 0;
+    margin: 20px;
+}
+
+.responsive-tabs {
+    flex: 1;
+}
+
+.estado {
+    display: none;
+}
+
+.flex-tabs {
+    display: flex;
+    flex-wrap: wrap;
 }
