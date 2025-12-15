@@ -44,3 +44,11 @@ header{
 .tab-panel {
     display: none;
 }
+
+
+/* Emplear flex al contenido */
+.contenido {
+    display: flex;
+}
+
+/* Pestañas activas */

@@ -56,9 +56,9 @@ aside.derecha ul li {
     margin-bottom: 5px;
 }
 
-aside.derecha ul li.drama:hover {
-    background-color: aqua;
-}
+/* aside.derecha ul li.drama:hover {
+    
+} */
 
 .centro {
     background-color: white;
