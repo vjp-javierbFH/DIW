@@ -1,0 +1,7 @@
+/* Estilo css general para los géneros de películas */
+header{
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

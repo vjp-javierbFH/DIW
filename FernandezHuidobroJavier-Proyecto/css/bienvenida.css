@@ -90,6 +90,8 @@ aside.derecha ul li.drama:hover {
     align-items: center;
     justify-content: space-around;
     padding: 10px;
+    gap: 20px;
+    /* Espacio uniforme entre elementos en escritorio */
 }
 
 /* Estilos de la clase cuadrado de cine */
@@ -99,6 +101,8 @@ aside.derecha ul li.drama:hover {
     width: 150px;
     height: 100px;
     border-radius: 5px;
+    margin: 0;
+    /* Evitamos márgenes extra que interfieran */
 }
 
 /* Estilos para la imagen */
@@ -126,26 +130,33 @@ aside.derecha ul li.drama:hover {
     .cabecera,
     .pie {
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
+        align-items: center;
         padding: 10px 0;
         height: 100%;
+        gap: 15px;
     }
 
     .cabecera h1 {
         writing-mode: vertical-rl;
         text-orientation: upright;
         font-size: 2rem;
-        margin: 10px 0;
+        margin: 0;
         padding: 0;
     }
 
     /* Ajuste de los cuadrados para parecer cinta de cine vertical */
     .cabecera .cuadrado,
     .pie .cuadrado {
-        width: 50px;
-        height: 35px;
-        margin: 5px 0;
+        width: 70px;
+        height: 65px;
+        margin: 0;
         flex-shrink: 0;
+        border-radius: 5px;
+    }
+
+    .pie .cuadrado {
+        margin: 5px
     }
 
     /* Ajustar contenido central */
