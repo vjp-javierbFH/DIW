@@ -2,34 +2,46 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: italic, sans-serif;
-    background-color: white;
-    color: black;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
-header{
+header {
     background-color: #1A1717;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
 }
 
 .contenido {
-    max-width: max-content;
-    margin: auto;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: flex;
+    gap: 20px;
 }
 
 .main {
     display: flex;
-    gap: 0;
-    margin: 20px;
+    gap: 20px;
+    flex: 1;
 }
 
 .responsive-tabs {
     flex: 1;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
 }
 
 .estado {
@@ -39,16 +51,126 @@ header{
 .flex-tabs {
     display: flex;
     flex-wrap: wrap;
+    background: #f0f0f0;
+    border-bottom: 1px solid #333;
+}
+
+.tab {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+    flex: 1;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    color: #000;
+    background: #e0e0e0;
 }
 
 .tab-panel {
     display: none;
+    padding: 30px;
+    min-height: 400px;
+    background: white;
 }
 
+.tab-panel h2 {
+    margin-bottom: 20px;
+    color: #1A1717;
+}
 
-/* Emplear flex al contenido */
-.contenido {
+.tab-panel p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Mostrar el panel activo */
+#tab1:checked~.flex-tabs label[for="tab1"],
+#tab2:checked~.flex-tabs label[for="tab2"],
+#tab3:checked~.flex-tabs label[for="tab3"],
+#tab4:checked~.flex-tabs label[for="tab4"],
+#tab5:checked~.flex-tabs label[for="tab5"] {
+    background: #1A1717;
+    color: white;
+}
+
+#tab1:checked~#panel1,
+#tab2:checked~#panel2,
+#tab3:checked~#panel3,
+#tab4:checked~#panel4,
+#tab5:checked~#panel5 {
+    display: block;
+}
+
+/* La primera pestaña activa por defecto (checked inicial) */
+.estado:nth-of-type(1):checked~.flex-tabs .tab:nth-of-type(1) {
+    background: #1A1717;
+    color: white;
+}
+
+/* Aside */
+.enlaces {
+    width: 220px;
+    background: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Pestañas activas */
+.enlaces a {
+    color: #1A1717;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.enlaces a:hover {
+    background: #f0f0f0;
+}
+
+.enlaces a:last-child {
+    border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contenido {
+        flex-direction: column;
+    }
+
+    .enlaces {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .enlaces a {
+        border-bottom: none;
+        border-right: 1px solid #ddd;
+    }
+
+    .enlaces a:last-child {
+        border-right: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .flex-tabs {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
