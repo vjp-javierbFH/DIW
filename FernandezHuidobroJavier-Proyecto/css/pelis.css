@@ -74,15 +74,13 @@ header h1 {
 
 .tab-panel {
     display: none;
-    /* Se mantiene para que solo se vea la pestaña activa */
+    /* Se activa con flex en los selectores :checked */
     padding: 30px;
-    min-height: 400px;
+    max-height: 500px;
+    /* Altura máxima para controlar el scroll del panel */
     background: white;
-
-    /* Nuevas propiedades para alinear imagen y texto */
-    align-items: center;
-    gap: 20px;
-    /* Espacio entre la imagen y el texto */
+    gap: 30px;
+    align-items: flex-start;
 }
 
 .tab-panel h2 {
@@ -93,6 +91,24 @@ header h1 {
 .tab-panel p {
     text-align: justify;
     line-height: 1.6;
+}
+
+/* Configuración del scroll para el resumen */
+.resumen {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 400px;
+    padding-right: 15px;
+}
+
+.resumen h3 {
+    margin: 15px 0 5px 0;
+    color: #1A1717;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.resumen p {
+    margin-bottom: 10px;
 }
 
 /* Mostrar el panel activo */
@@ -161,15 +177,22 @@ header h1 {
 /* Responsive */
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .flex-tabs {
         flex-direction: column;
     }
 
     .tab-panel {
         flex-direction: column;
-        /* Apila imagen y texto en móviles */
-        text-align: center;
+        align-items: center;
+        max-height: none;
+        /* Permite que crezca en móvil */
+    }
+
+    .resumen {
+        max-height: 300px;
+        /* Scroll más pequeño en móviles */
+        width: 100%;
     }
 
     header h1 {
