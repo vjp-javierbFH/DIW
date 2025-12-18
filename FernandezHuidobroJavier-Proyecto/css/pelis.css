@@ -73,9 +73,15 @@ header h1 {
 
 .tab-panel {
     display: none;
+    /* Se mantiene para que solo se vea la pestaña activa */
     padding: 30px;
     min-height: 400px;
     background: white;
+
+    /* Nuevas propiedades para alinear imagen y texto */
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre la imagen y el texto */
 }
 
 .tab-panel h2 {
@@ -103,7 +109,14 @@ header h1 {
 #tab3:checked~#panel3,
 #tab4:checked~#panel4,
 #tab5:checked~#panel5 {
-    display: block;
+    display: flex;
+}
+
+.tab-panel img {
+    max-width: 300px;
+    /* Controla el tamaño de la imagen */
+    height: auto;
+    border-radius: 4px;
 }
 
 /* La primera pestaña activa por defecto (checked inicial) */
@@ -168,6 +181,12 @@ header h1 {
 @media (max-width: 600px) {
     .flex-tabs {
         flex-direction: column;
+    }
+
+    .tab-panel {
+        flex-direction: column;
+        /* Apila imagen y texto en móviles */
+        text-align: center;
     }
 
     header h1 {
