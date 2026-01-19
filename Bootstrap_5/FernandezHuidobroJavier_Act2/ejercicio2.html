@@ -1,60 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Idéntico</title>
+    <title>Diseño Final Responsivo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .bg-header { background-color: #9aca40; color: white; padding: 1.5rem 2rem; }
-        .bg-aside { background-color: #e2e6e9; color: #1e4a8d; display: flex; align-items: center; padding-left: 2rem; min-height: 250px; }
-        
-        .blue-box { background-color: #2196f3; color: white; border: none; }
-        .bg-footer { background-color: #1a1a1a; color: white; padding: 1.5rem 2rem; }
-        
-        h1, h2, h3 { margin: 0; font-weight: 400; }
-        p { color: #555; line-height: 1.6; }
-        
-        /* Ajuste para los cuadros azules en vista grande (Imagen 3) */
+        /* Colores y estilos base */
+        .bg-header {
+            background-color: #9aca40;
+            color: white;
+            padding: 20px;
+        }
+
+        .bg-aside {
+            background-color: #e2e6e9;
+            color: #1e4a8d;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            padding-left: 2rem;
+        }
+
+        .bg-blue-section {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .bg-footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Estilo de los bloques azules */
+        .blue-box {
+            background-color: #2196f3;
+            height: 100%;
+        }
+
+        /* En pantallas grandes (lg), forzamos el fondo gris claro detrás de los bloques 
+           para que parezcan cajas separadas sobre un fondo */
         @media (min-width: 992px) {
-            .custom-gap { gap: 8rem; }
-            .blue-box { padding: 0 !important; }
+            .bg-blue-section {
+                background-color: #f8f9fa;
+            }
+
+            /* Gris muy claro como el fondo del main */
+            .blue-box {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="bg-header">
-        <h1>HEADER</h1>
+        <h1 class="m-0">HEADER</h1>
     </header>
 
     <main class="container-fluid p-0">
         <div class="row g-0">
-            <div class="col-12 col-md-8 p-5">
-                <h2 class="mb-4">MAIN</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="col-12 col-md-8 p-4 p-lg-5">
+                <h2 class="fw-normal">MAIN</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
             </div>
             <aside class="col-12 col-md-4 bg-aside">
-                <h2 class="fs-1">ASIDE</h2>
+                <h2 class="fw-normal">ASIDE</h2>
             </aside>
         </div>
 
-        <div class="bg-blue-container">
-            <div class="row g-4 custom-gap justify-content-center">
-                <div class="col-12 col-md-4 col-lg-2">
-                    <div class="blue-box">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <div class="bg-blue-section p-0 p-lg-5">
+            <div class="container-fluid">
+                <div class="row g-0 g-lg-5 justify-content-center">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="blue-box p-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 col-lg-2">
-                    <div class="blue-box">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="blue-box p-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4 col-lg-2">
-                    <div class="blue-box">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="blue-box p-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,8 +107,9 @@
     </main>
 
     <footer class="bg-footer">
-        <h3>Footer</h3>
+        <h3 class="m-0 fw-normal">Footer</h3>
     </footer>
 
 </body>
+
 </html>
