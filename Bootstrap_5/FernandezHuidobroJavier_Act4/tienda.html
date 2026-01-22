@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Electric Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html"><i class="fas fa-bolt"></i> Electric Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <form class="d-flex search-box">
+                    <input class="form-control" type="search" placeholder="Buscar">
+                    <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="section-title mb-5 text-center text-md-start">Nuestra Tienda</h1>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagenes/cardpic1.JPG" class="card-img-top" alt="Suministros">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cuadros Eléctricos</h5>
+                        <p class="card-text text-muted">Componentes de alta seguridad para distribución.</p>
+                        <button class="btn btn-dark w-100">Ver Productos</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="imagenes/cardpic3.JPG" class="card-img-top" alt="Iluminación">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Iluminación LED</h5>
+                        <p class="card-text text-muted">Ahorro energético y alta durabilidad.</p>
+                        <button class="btn btn-dark w-100">Ver Productos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-custom">
+        <div class="container text-center">
+            <p>2019 - Todos los derechos reservados - <i class="far fa-registered"></i></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
