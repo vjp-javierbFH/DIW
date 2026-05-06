@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="h-screen bg-white p-4 box-border flex flex-col gap-3">
+
+    <!-- Header -->
+    <header class="bg-green-300 flex items-center justify-center rounded-lg py-5 border border-3">
+        <span class="text-2xl font-extrabold text-gray-800">Header</span>
+    </header>
+
+    <!-- Fila: 1 y 2 centrados -->
+    <div class="grid grid-cols-4 gap-3">
+        <div
+            class="col-start-2 bg-fuchsia-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            1</div>
+        <div
+            class="col-start-3 bg-fuchsia-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            2</div>
+    </div>
+
+    <!-- Fila: 3 a la izquierda, 4 a la derecha -->
+    <div class="grid grid-cols-4 gap-3">
+        <div
+            class="col-start-1 bg-fuchsia-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            3</div>
+        <div
+            class="col-start-4 bg-fuchsia-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            4</div>
+    </div>
+
+    <!-- Fila: d, c, b, a (4 columnas) -->
+    <div class="grid grid-cols-4 gap-3">
+        <div class="bg-orange-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            d
+        </div>
+        <div class="bg-orange-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            c
+        </div>
+        <div class="bg-orange-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            b
+        </div>
+        <div class="bg-orange-400 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            a
+        </div>
+    </div>
+
+    <!-- Desktop (ancho completo) -->
+    <div class="bg-pink-300 rounded-lg flex items-center justify-center py-4 text-lg font-medium border border-3">
+        Desktop
+    </div>
+
+    <!-- Fila: :( y :D centrados -->
+    <div class="grid grid-cols-4 gap-3">
+        <div
+            class="col-start-2 bg-cyan-200 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            :(</div>
+        <div
+            class="col-start-3 bg-cyan-200 rounded-lg flex items-center justify-center py-6 text-xl font-semibold border border-3">
+            :D</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-300 flex items-center justify-center rounded-lg py-5 mt-auto border border-3">
+        <span class="text-2xl font-extrabold text-gray-800">Footer</span>
+    </footer>
+
+</body>
+
+</html>
