@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salas — CineManager</title>
+    <meta name="description" content="Consulta las salas disponibles, horarios, precios y ocupación en tiempo real.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="/cinemanager/assets/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="container py-5">
+        <header class="mb-4">
+            <h1 class="display-6 fw-bold">Nuestras salas</h1>
+            <p class="text-secondary">Selecciona una sala para ver la ocupación y elegir tu butaca.</p>
+        </header>
+
+        <div id="roomsGrid" class="row g-4"></div>
+    </main>
+
+    <!-- Modal mapa de butacas -->
+    <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-secondary">
+                    <h2 class="modal-title h5" id="seatModalTitle">Selecciona tu butaca</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seatContainer"></div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn cm-btn-outline" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="confirmBuy" type="button" class="btn cm-btn-primary"><i
+                            class="bi bi-ticket-perforated"></i> Confirmar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/cinemanager/assets/data.js"></script>
+    <script src="/cinemanager/assets/app.js"></script>
+    <script>
+        document.getElementById('navbar').innerHTML = CM_renderNavbar('salas');
+        document.getElementById('footer').innerHTML = CM_renderFooter();
+
+        const grid = document.getElementById('roomsGrid');
+        grid.innerHTML = CM_ROOMS.map(r => {
+            const m = CM_findMovie(r.movieId);
+            const pct = Math.round((r.occupied / r.capacity) * 100);
+            const badge = pct > 85 ? 'cm-badge-err' : pct > 50 ? 'cm-badge-warn' : 'cm-badge-ok';
+            return `
+      <div class="col-md-6 col-lg-4">
+        <article class="cm-card h-100">
+          <img class="w-100" style="height:180px;object-fit:cover" src="${m.backdrop}" alt="Fondo de ${m.title}" loading="lazy">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <h2 class="h5 mb-0">${r.name}</h2>
+              <span class="cm-badge ${badge}">${pct}% ocupación</span>
+            </div>
+            <p class="text-secondary small mb-2">Proyectando: <strong class="text-white">${m.title}</strong></p>
+            <div class="d-flex flex-wrap gap-1 mb-3">
+              ${r.schedules.map(s => `<span class="cm-chip"><i class="bi bi-clock"></i> ${s}</span>`).join('')}
+            </div>
+            <div class="d-flex justify-content-between align-items-center small text-secondary mb-3">
+              <span><i class="bi bi-people"></i> ${r.capacity - r.occupied}/${r.capacity} libres</span>
+              <span class="text-white fw-bold">${r.price.toFixed(2).replace('.', ',')} €</span>
+            </div>
+            <div class="progress" style="height:6px;background:#1f2937"><div class="progress-bar bg-danger" role="progressbar" style="width:${pct}%" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"></div></div>
+            <button class="btn cm-btn-primary w-100 mt-3" data-room="${r.id}"><i class="bi bi-grid-3x3-gap"></i> Ver butacas</button>
+          </div>
+        </article>
+      </div>`;
+        }).join('');
+
+        const modal = new bootstrap.Modal('#seatModal');
+        grid.addEventListener('click', e => {
+            const btn = e.target.closest('button[data-room]');
+            if (!btn) return;
+            const r = CM_ROOMS.find(x => x.id === Number(btn.dataset.room));
+            const m = CM_findMovie(r.movieId);
+            document.getElementById('seatModalTitle').textContent = `${r.name} — ${m.title}`;
+            CM_renderSeats(document.getElementById('seatContainer'), r);
+            modal.show();
+        });
+        document.getElementById('confirmBuy').addEventListener('click', () => {
+            const sel = document.querySelectorAll('#seatContainer .cm-seat.sel').length;
+            if (sel === 0) { CM_toast('Selecciona al menos una butaca', 'warn'); return; }
+            modal.hide();
+            CM_toast(`Compra confirmada: ${sel} entradas`, 'ok');
+        });
+    </script>
+</body>
+
+</html>

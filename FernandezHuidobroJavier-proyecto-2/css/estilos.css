@@ -1,0 +1,327 @@
+/* CineManager - estilos personalizados */
+:root {
+    --cm-bg: #0b0d12;
+    --cm-surface: #13161d;
+    --cm-surface-2: #1b1f2a;
+    --cm-primary: #e50914;
+    --cm-primary-2: #ff2d3a;
+    --cm-gold: #f5c518;
+    --cm-text: #f5f5f7;
+    --cm-muted: #9ca3af;
+    --cm-border: #262a35;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    background: var(--cm-bg);
+    color: var(--cm-text);
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    margin: 0
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.cm-navbar {
+    background: rgba(11, 13, 18, .85);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--cm-border);
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+
+.cm-brand {
+    font-weight: 800;
+    letter-spacing: .5px;
+    font-size: 1.35rem
+}
+
+.cm-brand span {
+    color: var(--cm-primary)
+}
+
+.cm-btn-primary {
+    background: var(--cm-primary);
+    border: none;
+    color: #fff;
+    font-weight: 600
+}
+
+.cm-btn-primary:hover {
+    background: var(--cm-primary-2);
+    color: #fff
+}
+
+.cm-btn-outline {
+    border: 1px solid var(--cm-border);
+    color: var(--cm-text);
+    background: transparent
+}
+
+.cm-btn-outline:hover {
+    background: var(--cm-surface-2);
+    color: #fff
+}
+
+.cm-card {
+    background: var(--cm-surface);
+    border: 1px solid var(--cm-border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .2s ease, border-color .2s ease
+}
+
+.cm-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cm-primary)
+}
+
+.cm-poster {
+    aspect-ratio: 2/3;
+    width: 100%;
+    object-fit: cover;
+    background: #222
+}
+
+.cm-hero {
+    position: relative;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-bottom: 1px solid var(--cm-border)
+}
+
+.cm-hero .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease
+}
+
+.cm-hero .slide.active {
+    opacity: 1
+}
+
+.cm-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 13, 18, .2) 0%, rgba(11, 13, 18, .85) 75%, #0b0d12 100%)
+}
+
+.cm-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 0
+}
+
+.cm-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--cm-surface-2);
+    border: 1px solid var(--cm-border);
+    padding: .25rem .6rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    color: var(--cm-muted)
+}
+
+.cm-rating {
+    color: var(--cm-gold);
+    font-weight: 700
+}
+
+.cm-section-title {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin: 0 0 1rem
+}
+
+.cm-footer {
+    background: #06080c;
+    border-top: 1px solid var(--cm-border);
+    color: var(--cm-muted);
+    padding: 2.5rem 0;
+    margin-top: 4rem
+}
+
+.cm-seat {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .6rem;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent
+}
+
+.cm-seat.free {
+    background: #1f2937;
+    color: #cbd5e1
+}
+
+.cm-seat.free:hover {
+    background: #374151
+}
+
+.cm-seat.sel {
+    background: var(--cm-primary);
+    color: #fff
+}
+
+.cm-seat.occ {
+    background: #3f1d1d;
+    color: #7f1d1d;
+    cursor: not-allowed
+}
+
+.cm-screen {
+    height: 8px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+    border-radius: 50%;
+    margin: 1rem auto 2rem;
+    width: 80%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, .25)
+}
+
+.cm-input,
+.form-control,
+.form-select {
+    background: var(--cm-surface) !important;
+    border: 1px solid var(--cm-border) !important;
+    color: var(--cm-text) !important
+}
+
+.cm-input:focus,
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cm-primary) !important;
+    box-shadow: 0 0 0 .2rem rgba(229, 9, 20, .2) !important
+}
+
+.cm-table {
+    color: var(--cm-text)
+}
+
+.cm-table thead th {
+    background: var(--cm-surface-2);
+    color: var(--cm-muted);
+    border-color: var(--cm-border);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .5px
+}
+
+.cm-table tbody td {
+    border-color: var(--cm-border);
+    vertical-align: middle
+}
+
+.cm-sidebar {
+    background: var(--cm-surface);
+    border-right: 1px solid var(--cm-border);
+    min-height: calc(100vh - 64px);
+    padding: 1.5rem 1rem
+}
+
+.cm-sidebar a {
+    display: block;
+    padding: .6rem .8rem;
+    border-radius: 8px;
+    color: var(--cm-muted);
+    margin-bottom: .25rem;
+    font-weight: 500
+}
+
+.cm-sidebar a.active,
+.cm-sidebar a:hover {
+    background: var(--cm-surface-2);
+    color: #fff
+}
+
+.cm-kpi {
+    background: var(--cm-surface);
+    border: 1px solid var(--cm-border);
+    border-radius: 14px;
+    padding: 1.2rem
+}
+
+.cm-kpi .label {
+    color: var(--cm-muted);
+    font-size: .85rem
+}
+
+.cm-kpi .value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-top: .25rem
+}
+
+.cm-badge {
+    padding: .25em .55em;
+    border-radius: 6px;
+    font-size: .75rem;
+    font-weight: 600
+}
+
+.cm-badge-ok {
+    background: rgba(34, 197, 94, .15);
+    color: #22c55e
+}
+
+.cm-badge-warn {
+    background: rgba(245, 158, 11, .15);
+    color: #f59e0b
+}
+
+.cm-badge-err {
+    background: rgba(239, 68, 68, .15);
+    color: #ef4444
+}
+
+.modal-content {
+    background: var(--cm-surface);
+    color: var(--cm-text);
+    border: 1px solid var(--cm-border)
+}
+
+.dropdown-menu {
+    background: var(--cm-surface);
+    border: 1px solid var(--cm-border)
+}
+
+.dropdown-item {
+    color: var(--cm-text)
+}
+
+.dropdown-item:hover {
+    background: var(--cm-surface-2);
+    color: #fff
+}
+
+@media (max-width: 768px) {
+    .cm-hero {
+        min-height: 50vh
+    }
+
+    .cm-sidebar {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--cm-border)
+    }
+}

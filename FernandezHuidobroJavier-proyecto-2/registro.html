@@ -1,0 +1,22 @@
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/cinemanager/assets/data.js"></script>
+<script src="/cinemanager/assets/app.js"></script>
+<script>
+    document.getElementById('navbar').innerHTML = CM_renderNavbar('registro');
+    document.getElementById('footer').innerHTML = CM_renderFooter();
+    const form = document.getElementById('regForm');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const p1 = document.getElementById('password'), p2 = document.getElementById('password2');
+        p2.setCustomValidity(p1.value !== p2.value ? 'mismatch' : '');
+        if (!form.checkValidity()) { form.classList.add('was-validated'); return; }
+        localStorage.setItem('cm_user', JSON.stringify({ email: document.getElementById('email').value, name: name.value }));
+        CM_toast('Cuenta creada con éxito');
+        setTimeout(() => location.href = '/cinemanager/perfil.html', 800);
+    });
+</script>
+</body>
+
+</html>

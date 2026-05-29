@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineManager — Tu cine, en tus manos</title>
+    <meta name="description" content="Consulta cartelera, salas, horarios y compra tus entradas en CineManager.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <header class="cm-hero" id="hero" aria-label="Películas destacadas"></header>
+
+    <main class="container py-5">
+        <section id="cartelera" aria-labelledby="carteleraTitle">
+            <div class="d-flex justify-content-between align-items-end mb-3">
+                <h2 id="carteleraTitle" class="cm-section-title">En cartelera</h2>
+                <div class="d-none d-md-flex gap-2">
+                    <input id="searchInput" type="search" placeholder="Buscar película..."
+                        class="form-control form-control-sm cm-input" style="width:240px" aria-label="Buscar películas">
+                    <select id="genreFilter" class="form-select form-select-sm cm-input" style="width:200px"
+                        aria-label="Filtrar por género">
+                        <option value="">Todos los géneros</option>
+                    </select>
+                </div>
+            </div>
+            <div id="movieGrid" class="row g-3"></div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="cm-section-title">Por qué CineManager</h2>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="cm-card p-4 h-100"><i class="bi bi-badge-4k-fill fs-2 text-danger"></i>
+                        <h3 class="h5 mt-2">Calidad IMAX y Dolby</h3>
+                        <p class="text-secondary small mb-0">Disfruta el cine como debe ser, con imagen y sonido
+                            envolvente.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cm-card p-4 h-100"><i class="bi bi-ticket-detailed-fill fs-2 text-danger"></i>
+                        <h3 class="h5 mt-2">Entradas en 1 minuto</h3>
+                        <p class="text-secondary small mb-0">Compra y elige tu butaca desde el móvil sin colas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cm-card p-4 h-100"><i class="bi bi-stars fs-2 text-danger"></i>
+                        <h3 class="h5 mt-2">Programa de socios</h3>
+                        <p class="text-secondary small mb-0">Descuentos, preestrenos y entradas gratis por cada 10
+                            compradas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('navbar').innerHTML = CM_renderNavbar('home');
+        document.getElementById('footer').innerHTML = CM_renderFooter();
+        CM_initHero(document.getElementById('hero'));
+
+        const grid = document.getElementById('movieGrid');
+        const render = (list) => grid.innerHTML = list.map(CM_movieCard).join('') || '<p class="text-secondary">Sin resultados.</p>';
+        render(CM_MOVIES);
+
+        const genres = [...new Set(CM_MOVIES.map(m => m.genre))];
+        const gf = document.getElementById('genreFilter');
+        genres.forEach(g => { const o = document.createElement('option'); o.value = g; o.textContent = g; gf.appendChild(o); });
+
+        const apply = () => {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const g = gf.value;
+            render(CM_MOVIES.filter(m => (!g || m.genre === g) && m.title.toLowerCase().includes(q)));
+        };
+        document.getElementById('searchInput').addEventListener('input', apply);
+        gf.addEventListener('change', apply);
+    </script>
+</body>
+
+</html>

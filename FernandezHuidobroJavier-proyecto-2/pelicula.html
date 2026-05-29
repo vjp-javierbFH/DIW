@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Película — CineManager</title>
+    <meta name="description" content="Ficha de película con sinopsis, reparto y horarios disponibles.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="/cinemanager/assets/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main id="movieRoot"></main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/cinemanager/assets/data.js"></script>
+    <script src="/cinemanager/assets/app.js"></script>
+    <script>
+        document.getElementById('navbar').innerHTML = CM_renderNavbar('cartelera');
+        document.getElementById('footer').innerHTML = CM_renderFooter();
+
+        const id = new URLSearchParams(location.search).get('id') || 1;
+        const m = CM_findMovie(id) || CM_MOVIES[0];
+        document.title = `${m.title} — CineManager`;
+        const rooms = CM_ROOMS.filter(r => r.movieId === m.id);
+
+        document.getElementById('movieRoot').innerHTML = `
+    <section class="position-relative" style="min-height:50vh;background:linear-gradient(180deg,rgba(11,13,18,.4),#0b0d12),url('${m.backdrop}') center/cover">
+      <div class="container py-5">
+        <div class="row g-4 align-items-end">
+          <div class="col-md-4 col-lg-3">
+            <img src="${m.poster}" alt="Cartel de ${m.title}" class="img-fluid rounded-3 shadow-lg" style="border:1px solid var(--cm-border)">
+          </div>
+          <div class="col-md-8 col-lg-9 text-white">
+            <div class="d-flex flex-wrap gap-2 mb-2">
+              <span class="cm-chip">${m.genre}</span>
+              <span class="cm-chip"><i class="bi bi-clock"></i> ${m.duration} min</span>
+              <span class="cm-chip"><i class="bi bi-shield-check"></i> ${m.rating}</span>
+              <span class="cm-chip cm-rating">★ ${m.score}</span>
+            </div>
+            <h1 class="display-5 fw-bold">${m.title}</h1>
+            <p class="lead text-light opacity-75">${m.synopsis}</p>
+            <p class="small mb-1"><strong>Director:</strong> ${m.director}</p>
+            <p class="small"><strong>Reparto:</strong> ${m.cast}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container py-5">
+      <h2 class="cm-section-title">Horarios y salas</h2>
+      ${rooms.length ? rooms.map(r => `
+        <div class="cm-card p-3 mb-3 d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div>
+            <h3 class="h6 mb-1">${r.name}</h3>
+            <small class="text-secondary">${r.capacity - r.occupied} butacas libres · ${r.price.toFixed(2).replace('.', ',')} €</small>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            ${r.schedules.map(s => `<a href="/cinemanager/salas.html" class="btn btn-sm cm-btn-outline"><i class="bi bi-clock"></i> ${s}</a>`).join('')}
+          </div>
+          <a href="/cinemanager/salas.html" class="btn cm-btn-primary"><i class="bi bi-ticket-perforated"></i> Comprar</a>
+        </div>
+      `).join('') : '<p class="text-secondary">No hay sesiones programadas.</p>'}
+    </section>`;
+    </script>
+</body>
+
+</html>
